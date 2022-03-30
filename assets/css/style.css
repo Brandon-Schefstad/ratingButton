@@ -4,11 +4,15 @@
 }
 
 :root{
-    font-weight: var(--font-weight-8);
-    font-size: var(----font-size-5);
-    background-color:var(--color-gray-8);
-    font-family: var(--font-sans);
-    background-size: cover;
+    --primary-color: hsl(25, 97%, 53%);
+    --neutral-white: hsl(0, 0%, 100%);
+    --neutral-lightGrey:hsl(217, 12%, 63%);
+    --neutral-mediumGrey: hsl(216, 12%, 54%);
+    --neutral-darkBlue:hsl(213, 19%, 18%);
+    --neutral-veryDarkBlue: hsl(216, 12%, 8%);
+    font-size: 15px;
+    font-family: 'Overpass', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 /* Clear fix hack */
 .clearfix:after {
@@ -84,4 +88,98 @@ button,
 textarea,
 select {
  font: inherit;
+}
+/******************************************
+/* BASE BUILDING
+/*******************************************/
+.wrapper{
+    background-color: var(--neutral-veryDarkBlue);
+    height:100vh;
+    width:100vw;
+    display:grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: repeat(5,1fr);
+    margin:auto;
+    align-content: stretch;
+    justify-content: stretch;
+}
+.grid{
+    display:grid;
+}
+.card{
+     /* Grid */
+    grid-row:1/4;
+    grid-column:5/9;
+    background-image: linear-gradient(180deg,var(--neutral-darkBlue),var(--neutral-veryDarkBlue));
+    border:3px solid var(--neutral-darkBlue);
+    margin:auto;
+    position:relative;
+    width:75%;
+    height:75%;
+    border-radius: 1rem;
+}
+.card--ratingState{
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(7,1fr);
+    padding:2rem;
+    width:100%;
+}
+.card--ratingState__title{
+    grid-row-start:3;
+    color:var(--neutral-white);
+    position:relative;
+    font-size: 2rem;
+    /* padding-bottom:0.5rem; */
+}
+.card--ratingState__text{
+    grid-row-start: 4;
+    color:var(--neutral-lightGrey);
+    font-size:1rem;
+}
+.card--ratingState__ratings{
+    display:flex;
+    position:relative;
+    width:100%;
+    grid-row:5/6;
+    top:1rem;
+    align-self:center;
+    left:4.5rem;
+}
+.card--ratingState__number{
+    /* background-color: var(--neutral-mediumGrey); */
+    display:grid;
+    color:var(--neutral-lightGrey);
+    background-color: var(--neutral-darkBlue);
+    position:relative;
+    margin-left:0.75rem;
+    padding:0.25rem 0.75rem;
+    border:2px solid var(--primary-color);
+    border-radius: 3rem;
+    margin-right:0.5rem;
+    text-align: center;
+}
+.card--ratingState__submitButton{
+    grid-row:7/8;
+    background-color:var(--primary-color);
+    color:var(--neutral-darkBlue);
+    border-radius:1.5rem;
+    border:2px solid var(--primary-color);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size:1.5rem;
+}
+.card--ratingState__number:active{
+    background-color: var(--primary-color);
+    color:var(--neutral-veryDarkBlue);
+}
+
+/* Event Listener in main.js */
+.card--ratingState__number--focused{
+    background-color: var(--neutral-mediumGrey);
+}
+
+.card--ratingState__submitButton:active{
+    background-color: var(--neutral-veryDarkBlue);
+    color:var(--primary-color);
 }
