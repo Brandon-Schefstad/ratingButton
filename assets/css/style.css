@@ -4,7 +4,7 @@
 }
 
 :root{
-    --primary-color: hsl(25, 97%, 53%);
+    --primary-color: hsl(19, 74%, 53%);
     --neutral-white: hsl(0, 0%, 100%);
     --neutral-lightGrey:hsl(217, 12%, 63%);
     --neutral-mediumGrey: hsl(216, 12%, 54%);
@@ -108,15 +108,15 @@ select {
 }
 .card{
      /* Grid */
-    grid-row:1/4;
+    grid-row:2/3;
     grid-column:5/9;
     background-image: linear-gradient(180deg,var(--neutral-darkBlue),var(--neutral-veryDarkBlue));
     border:3px solid var(--neutral-darkBlue);
     margin:auto;
     position:relative;
-    width:75%;
-    height:75%;
     border-radius: 1rem;
+    padding:5rem;
+    padding-bottom: 0.5rem;
 }
 .card--ratingState{
     display:grid;
@@ -159,15 +159,72 @@ select {
     margin-right:0.5rem;
     text-align: center;
 }
+.card--ratingState__number:hover{
+    background-color: var(--primary-color);
+    color:var(--neutral-darkBlue);
+    
+}
 .card--ratingState__submitButton{
     grid-row:7/8;
-    background-color:var(--primary-color);
-    color:var(--neutral-darkBlue);
-    border-radius:1.5rem;
-    border:2px solid var(--primary-color);
+    letter-spacing: 3px;
+    background-color:var(--neutral-darkBlue);
+    color:var(--primary-color);
+    border-radius:1.5em;
+    border:0.125em solid var(--primary-color);
     text-transform: uppercase;
     font-weight: 700;
-    font-size:1.5rem;
+    font-size:1.8em;
+    position:relative;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+    text-shadow: 0 0 0.125em var(--primary-color);
+    padding: 0em 0.5em;
+    box-shadow: inset 0 0 0.25em 0 var(--primary-color), 0 0 0.25em 0 var(--primary-color);
+    z-index:1;
+}
+.card--ratingState__submitButton::before{
+    content:'';
+    display:block;
+    position:absolute;
+    background-color: var(--primary-color);
+    height:50px;
+    left: 0%;
+    right:0%;
+    top:9rem;
+    width:100%;
+    transform: perspective(8em) rotateX(40deg) translateZ(2em);
+    filter:blur(1em);
+    opacity:0.5;
+    transition: opacity 100ms linear;
+    pointer-events: none;
+
+}
+.card--ratingState__submitButton::after{
+    content:'';
+    position:absolute;
+    background-color: var(--primary-color);
+    top:0;
+    bottom:0;
+    left: 0%;
+    right: 0%;
+    width:100%;
+    background: var(--primary-color);
+    box-shadow: 0 0 0.5em 0.5em var(--primary-color);
+    opacity:0;
+    transition: opacity 100ms linear;
+    z-index:-1;
+    border-radius:1.5em;
+}
+.card--ratingState__submitButton:hover::after{
+    opacity: 1;
+}
+.card--ratingState__submitButton:hover::before{
+    opacity:1;
 }
 .card--ratingState__number:active{
     background-color: var(--primary-color);
@@ -179,7 +236,9 @@ select {
     background-color: var(--neutral-mediumGrey);
 }
 
-.card--ratingState__submitButton:active{
-    background-color: var(--neutral-veryDarkBlue);
-    color:var(--primary-color);
+.card--ratingState__submitButton:hover,
+.card--ratingState__submitButton:focus{
+    background-color: var(--primary-color);
+    color:var(--neutral-veryDarkBlue);
+    text-shadow:none;
 }
