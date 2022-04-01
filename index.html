@@ -1,61 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Interactive rating component</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-    @import url('https://fonts.googleapis.com/css2?family=Overpass&family=Source+Sans+Pro&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&family=Source+Sans+Pro&display=swap');
-  </style> 
-  <link rel="stylesheet" href="./assets/css/style.css">
-</head>
-<body>
+    <title>Frontend Mentor | Interactive rating component</title>
 
-  <!-- Rating state start -->
-<section class="wrapper">
-  <div class="card grid">
-  
-    <section class="card--ratingState">
-      <h1 class="card--ratingState__title">How did we do?</h1>
-      <p class="card--ratingState__text">
-        Please let us know how we did with your support request. All feedback is appreciated
-        to help us improve our offering!
-      </p>
-      <section class="card--ratingState__ratings">  
-        <button class="card--ratingState__number">1</button>
-        <button class="card--ratingState__number">2</button>
-        <button class="card--ratingState__number">3</button>
-        <button class="card--ratingState__number">4</button>
-        <button class="card--ratingState__number">5</button>
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+      @import url('https://fonts.googleapis.com/css2?family=Overpass&family=Source+Sans+Pro&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&family=Source+Sans+Pro&display=swap');
+    </style>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <!-- Rating state start -->
+    <section class="wrapper">
+      <div class="card card--ratingState grid visible">
+        <h1 class="card--ratingState__title">How did we do?</h1>
+        <p class="card--ratingState__text">
+          Please let us know how we did with your support request. All feedback
+          is appreciated to help us improve our offering!
+        </p>
+        <section class="card--ratingState__ratings">
+          <!--         <label><input type="radio" name="select" /><span class="card--ratingState__number">1</span> -->
+          <button class="card--ratingState__number one">1</button>
+          <button class="card--ratingState__number two">2</button>
+          <button class="card--ratingState__number three">3</button>
+          <button class="card--ratingState__number four">4</button>
+          <button class="card--ratingState__number five">5</button>
+        </section>
+        <button class="card--ratingState__submitButton">Submit</button>
+
+        <!-- Rating state end -->
+      </div>
+      <!-- Thank you state start -->
+      <section class="card grid card--thankYouState zindex">
+        <p class="card--thankYouState__rating">
+          You selected
+          <span class="card--thankYouState__rating--number"></span> out of 5
+        </p>
+
+        <h1 class="card--thankYouState__title">Thank you!</h1>
+        <p class="card--thankYouState__text">
+          We appreciate you taking the time to give a rating. If you ever need
+          more support, don’t hesitate to get in touch!
+        </p>
       </section>
-      <button class="card--ratingState__submitButton">Submit</button>
+      <!-- Thank you state end -->
     </section>
-  
-    <!-- Rating state end -->
-  
-    <!-- Thank you state start -->
-  
-    <!-- <p class="card--thankYouState__rating">You selected Add rating here out of 5</p> -->
-    <!-- <h1 class="card--thankYouState__title">Thank you!</h1>
-    <p class="card--thankYouState__text">
-      We appreciate you taking the time to give a rating. If you ever need more support,
-      don’t hesitate to get in touch!
-    </p> -->
-    <!-- Thank you state end -->
-  </div>
-</section>
-
-  <!-- <div class="attribution">
+    <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div> -->
-</body>
+  </body>
+  <script src="./assets/js/main.js"></script>
 </html>
