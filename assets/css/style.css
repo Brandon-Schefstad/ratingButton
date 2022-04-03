@@ -107,7 +107,6 @@ select {
   display: grid;
 }
 .card {
-  /* Grid */
   display: flex;
   flex-direction: column;
   /*   justify-content:center; */
@@ -128,14 +127,6 @@ select {
 .card--ratingState {
   padding: 7em 0em;
 }
-/* .card--ratingState{
-    display:grid;
-    margin:auto;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(7,1fr);
-    padding:2rem;
-    width:100%;
-} */
 .card--ratingState__title,
 .card--thankYouState__rating,
 .card--thankYouState__title {
@@ -149,6 +140,7 @@ select {
 .card--thankYouState__rating {
   grid-row-start: 4;
   padding-top: 1em;
+  position: relative;
 }
 
 .card::before {
@@ -163,7 +155,6 @@ select {
   text-align: center;
 }
 .card--ratingState__text {
-  grid-row-start: 4;
   color: var(--neutral-lightGrey);
   font-size: 1.2rem;
   text-align: center;
@@ -172,7 +163,6 @@ select {
 .card--ratingState__ratings {
   display: flex;
   position: relative;
-  grid-row: 5/6;
   top: 1rem;
   align-self: center;
   padding-bottom: 2em;
@@ -299,11 +289,20 @@ select {
   );
   height: 100%;
 }
-
+.card--thankYouState__rating::after {
+  content: '';
+  position: absolute;
+  display: block;
+  height: 10px;
+  top: 3em;
+  z-index: 14;
+  background-color: var(--neutral-mediumGrey);
+  width: 100%;
+}
 .card--thankYouState__text {
-  color: var(--neutral-lightGrey);
+  color: var(--neutral-white);
   text-align: center;
-  font-size: 1.2rem;
-  grid-row: 7;
+  font-size: 1.3rem;
+  grid-row: 8;
   padding: 0em 0.75em;
 }
