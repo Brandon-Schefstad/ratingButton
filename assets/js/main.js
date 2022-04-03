@@ -51,7 +51,7 @@ function submit() {
   document.querySelector('.card--thankYouState__rating--number').innerText =
     ratingScore;
   document
-    .querySelector('.card--ratingState__submitButton', '::before')
+    .querySelector('.card--ratingState__submitButton')
     .classList.add('none');
 }
 //Home: Change Div visibility by using class .hidden and .visible on a submittal event listener//
